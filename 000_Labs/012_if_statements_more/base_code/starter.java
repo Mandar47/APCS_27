@@ -13,10 +13,10 @@ class starter {
 		System.out.print("Please input your second number: ");
 		int num2 = sc.nextInt();
 		if(num1 == num2){
-			System.out.println("They are equal!");
+			System.out.println("They are the same!");
 		
 		} else {
-			System.out.println("They are not equal!");
+			System.out.println("They are different!");
 		}
 	}
 }

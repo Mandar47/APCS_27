@@ -12,10 +12,10 @@ class starter {
 		System.out.println("The first variable is: " + num1);
 		System.out.println("The second variable is: " + num2);
 		if(num1 == num2){
-			System.out.println("They are equal!");
+			System.out.println("They are the same!");
 		
 		} else {
-			System.out.println("They are not equal!");
+			System.out.println("They are different!");
 		}
 	}
 }
