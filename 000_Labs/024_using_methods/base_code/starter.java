@@ -1,6 +1,6 @@
 /*
- *	Author:  
- *  Date: 
+ *	Author:  Armand Vartanian
+ *  Date: 10/16/26
 */
 
 import java.io.*;
@@ -13,7 +13,60 @@ class starter {
 	static ArrayList<String> arr = new ArrayList<String>();
 
 	public static void main(String args[]) throws InterruptedException {
-		// Write your code here!
+		Scanner sc = new Scanner(System.in);
+		System.out.println("Welcome to Type Quest!");
+		System.out.println("It is currently " + getTime() + " and we're ready to play!");
+		System.out.println("Given a sentence, type it as fast as possible!");
+		System.out.println();
+		System.out.println("------------------------------------------");
+		boolean playing = true;
+		while (playing == true) {
+			System.out.println("Would you like to: ");
+			System.out.println("1 - Play random");
+			System.out.println("2 - Play set");
+			System.out.println("3 - Quit");
+			int playerchoice = sc.nextInt();
+			sc.nextLine();
+			if (playerchoice == 1) {
+				System.out.println("You've chosen to randomly select a sentence.");
+				System.out.println();
+				System.out.println("-----------------Your sentence is:-----------------");
+				String sentence = (getSentence());
+				System.out.println(sentence);
+				countdown();
+				startTimer();
+				String playerans = sc.nextLine();
+				double time = endTimer();
+				System.out.println("Nice job! Here are your results!");
+				System.out.println("Time: " + time);
+				System.out.println("Errors: " + compareSentences(sentence, playerans) + " / " + lettersInSentence(sentence) + " letters");
+				System.out.println((((lettersInSentence(playerans)) - (compareSentences(sentence,playerans)))/(time/60.0) + " letters per minute" ));
+				System.out.println((((wordsInSentence(playerans)) - (compareSentences(sentence,playerans)))/(time/60.0) + " words per minute" ));
+
+			} else if (playerchoice == 2) {
+				System.out.print("Please enter what number sentence you'd like to play: ");
+				int setchoice = sc.nextInt();
+				sc.nextLine();
+				System.out.println("-----------------Your sentence is:-----------------");
+				String sentence = (getSentence(setchoice));
+				System.out.println(sentence);
+				countdown();
+				startTimer();
+				String playerans = sc.nextLine();
+				double time = endTimer();
+				System.out.println("Nice job! Here are your results!");
+				System.out.println("Time: " + time);
+				System.out.println("Errors: " + compareSentences(sentence, playerans) + " / " + lettersInSentence(sentence) + " letters");
+				System.out.println((((lettersInSentence(playerans)) - (compareSentences(sentence,playerans)))/(time/60.0) + " letters per minute" ));
+				System.out.println((((wordsInSentence(playerans)) - (compareSentences(sentence,playerans)))/(time/60.0) + " words per minute" ));
+
+			} else {
+
+				playing = false;
+			}
+		}
+		
+
 
 		
 	}
