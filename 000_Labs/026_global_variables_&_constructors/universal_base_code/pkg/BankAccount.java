@@ -8,23 +8,35 @@ import java.util.*;
 
 public class BankAccount {
 	// -------GLOBAL VARIABLES-------
-	String owner = "";
-	double balance = 0;
-	private int accountnum = (int)((Math.random()*951) + 50);
-	boolean active = false;
+	private String owner = "unknown";
+	private double balance = 0;
+	private int accountnum = nextAccountNumber;
+	private static int nextAccountNumber = (int)((Math.random()*951) + 50);
+	private boolean active = true;
 
 	// -------CONSTRUCTORS-------
 	public BankAccount(){
 		owner = "";
 		balance = 0;
 		active = true;
+		accountnum = nextAccountNumber;
+		nextAccountNumber++;
 	}
-	public BankAccount(String owner2, boolean active2) {
+	public BankAccount(String owner2) {
 		owner = owner2;
 		balance = 0;
-		active = active2;
+		active = true;
+		accountnum = nextAccountNumber;
+		nextAccountNumber++;
+
 	}
-	public BankAccount(String owner3, double balance3, )
+	public BankAccount(String owner3, double balance3) {
+		owner = owner3;
+		balance = balance3;
+		active = true;
+		accountnum = nextAccountNumber;
+		nextAccountNumber++;
+	}
 
 
 	// -------METHODS-------
